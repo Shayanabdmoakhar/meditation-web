@@ -1,0 +1,679 @@
+/* adding a new font family to all the text */
+html , body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto Flex", "sans-serif";
+}
+/* Entire body background color */
+
+body{
+    background-color: white;
+}
+/* Defining variables for frequently used colors */
+
+:root {
+    --lightBlue:rgb(24, 124, 218);
+    --white:#f6ecec;
+    --bolderntBlue:rgb(3 85 218);
+    --hovers:#002951;
+    --theme-mode:rgb(0 74 143);
+    --black-theme-hover:#083838;
+}
+/* fixing the nav bar on top of the page with its flex properties and alignments*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;  /*bringing the nav onto the top due to its fixed position */
+    background-color: #2a6bab;
+    color: var(--white);
+}
+nav .title{
+    color: white;
+    cursor: pointer;
+    letter-spacing: 1px; /* <!-- space between the header letters--> */
+    font-size: 2em;
+    font-weight: bold;
+}
+/* Centering the ul items*/
+nav ul {
+    margin: 0;
+    text-align: center;
+}
+nav  ul  li {
+    /* adding line height to make the list items bigger and have more space between
+    the baselines */
+    line-height: 50px; 
+    font-size:1.2em;
+    padding: 10px;
+    list-style: none;     /* removing the style boiler  on the list items */
+}
+/* hyper link style and syling the hover and how it appears with the transition*/
+nav > ul > li > a{
+    color: white;
+    text-decoration: none;     /* removing the bottom underline of anchor tags */
+    font-size: 1.5rem;
+    transition: color 0.7s, background-color 0.7s, border-bottom 0.7s;
+    padding: 0.5rem 1rem;
+}
+/* adding hover styles when list items are hovered. */
+nav ul li a:hover{
+border-radius: 5px;
+background-color: var(--white);
+color: var(--hovers);
+}
+
+/* Hidding the mobile checkbox on the humburger */
+#mobile-menu-humburger {
+    display: none;
+}
+/* moving the humburger to the right side of the page with a space from the heading text */
+nav label {
+    line-height: 100px;  /*to fill up the space between the burger and the ul*/
+    font-size: 40px;   /* making the humburger bigger */
+    color:white;
+    cursor: pointer;
+}
+/*hidding the menu items for mobile screens/ the menu list items would stay
+eventhogh the humburger is not clicked*/
+nav ul {display: none;} 
+
+/* makeing sure that the humburger can view the ul when clicked  */
+nav input:checked ~ ul {
+    display: inline-block;
+}   
+/* styling the h1  */
+header .content h1{
+    font-weight: bold;
+    font-size: 2em;
+    width: 100%;
+    color:#0d5656;
+}
+/* styling the paragraph and the space from its bottom */
+#text-content p{
+    margin-bottom: 29px;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+}
+/* hover effects on the see more about us */
+#buttons a:hover {
+background-color: #002951;
+color: var(--white);
+cursor: pointer;
+transition: color 0.5s, background-color 0.5s;
+}
+/* PC and Tablet Screens responsiveness*/
+@media (min-width:768px){
+    nav label{
+        display: none;
+    }
+    /* Make the elements inside the nav places in row and fixed on top*/   
+    nav {
+        display: flex;/*redundant css and can be removed */
+        flex-direction: row;
+        position: fixed; /*redundant css and can be removed */
+    }
+    nav ul{
+        display: flex;
+        justify-content: center;  /*redundant css and can be removed */
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    nav .title{
+        width: 100%;
+        letter-spacing: 3px;/* giving space between the letters of h1 */
+        padding-left: 10px;
+        font-weight: bold;
+    }
+}
+
+
+@media (max-width: 768px){
+    /* positioning the ul absolute so it can be positioned relative to its parent ( right of the nav bar) */
+    nav ul {
+        padding:1rem;
+        /* !positioned absolute == ul is postioned to the right side of the humburger */
+        position: absolute;
+        background-color:  rgb(24, 124, 218);
+        top: 89px;  /*giving space from the top which is its parent nav to avoid the ul overlap the nav */
+        right: 0;  /*MOved the ul items to left */
+        width: 100%;
+    }
+    /* 20px space from its box on each side "Meditation for Everyone"*/
+    nav .title{
+         padding: 0 20px;
+    }
+}
+
+/*Video Section : Making the header(video) to take the entire page(height 100vh) when it is opened*/
+header{
+    display: flex; /* to have its elements displayed row*/
+    justify-content: center;
+    height:100vh;
+    overflow: hidden;  /*Hides the content when reduced in size*/
+}
+/* giving the video the height and width 100% to take the entire header section */
+ video {
+    position: absolute; /*The header is flex, the video and the other div
+    inside the header will be horizatally aligned if not posiiotnied 
+    absolute*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* obeject fit: to make the video fit the entire header */
+}
+/* display the heading and paragraph as column on the video  */
+header .content{
+    z-index: 0; /*if z index is 1 it will stack on the navr bar(ul items )when clicked on
+    0 will place it beween the nav bar and on top of the video */
+    display: flex;
+    flex-direction: column; /* stack the elements on each other*/
+    align-items: center; /* centering the items vertically */
+    justify-content: center; /* centering horizontally*/
+    color: var(--text-color);
+    padding: 1.5em 2em;
+}
+
+/* positioning and displaying the  See More About Us button */
+#buttons a{
+    display: flex;
+    align-items: center;
+    justify-content:center; /* Redundant can be removed */ 
+    border: 2px solid rgb(3, 249, 68);
+    color: rgb(3, 249, 68);
+    padding: 10px 30px; /* making the box  look better and bigger*/
+    text-decoration: none;
+    font-weight: bold;
+}
+/* STUDY FROM HERE */
+
+/* ipad screen sizes for about section */
+@media (min-width: 768px){
+   
+   /* .about-meditation{
+    width: 100%;
+} */
+
+header .content{
+    font-family: "Protest Strike", sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#text-content h1{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;/* Made all the h1 uppercase */
+    letter-spacing: 2px;
+    color: white;
+}
+#text-content p{
+    font-size: 2em;
+    text-align: center;
+    color: white;
+}
+
+}
+.about-meditation {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    margin-bottom: 60px;
+    background-color: l
+}
+.about-meditation p{
+    text-align: center;
+    font-size: 1.5em;
+}
+/* chevron margin to the see about us text */
+i {
+margin-left: 1em;
+}
+
+/* Section 2 About */
+#about{
+    display: flex; /* redundant */
+    width: 100%; /* redundant */
+    text-align: center; /* redundant */
+    background-image: linear-gradient(45deg, rgb(3 106 218 / 62%), transparent);
+}
+header .about-meditation{
+    padding: 10px 10px;
+} /* redundant */
+
+/* section 3 Customization*/
+
+h1 {
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 2em;
+    text-align: center;
+}
+
+#customization {
+    display: flex;
+    flex-direction: column;
+}
+/* making the div boxes stacked on each other using flex */
+.custom-boxes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    margin:auto;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* h2 has default margin 
+removed the margin by setting the margin to auto */
+.custom-boxes h2{
+    width: 100%;  /* redundant */
+    margin: auto;
+    font-family: "Roboto Flex", sans-serif;  /* redundant */
+}
+.custom-boxes h1,p{
+    width: 100%; /* redundant */
+    margin: auto;
+    font-family: "Roboto Flex", sans-serif; /* redundant */
+}
+/* make the boxes get a background color when hoverd with a duration */
+.custom-boxes:hover{
+    background-color: var(--hovers);
+    color: var(--white);     /* text will turn white */
+    transition: color 0.5s, background-color 0.5s;  /* duration of color transition */
+}
+.custom-boxes img{   
+    width: 100px;
+    height: 100px;
+    padding-top: 10px;
+}
+
+/* Images will display 2x2 on ipad */
+@media (min-width:768px)
+{
+    .custom-boxes{
+        display: inline-block;
+        width: 44%;
+        margin: 20px;
+    }
+    .course-details{
+        display: inline-table;
+    } /* redundant */
+    .custom-boxes img{
+        width: 150px;
+        height: 150px;
+    }
+    .custom-boxes p{
+        padding: 10px;
+    }
+
+}
+
+/* Images will display 3x3 on Computer screens*/
+@media (min-width:1180px)
+{
+    .custom-boxes {
+        display: inline-block;
+        width: 30%;
+        margin: 10px 10px;
+    }
+    .custom-boxes img{
+        width: 200px;
+        height: 200px;
+        padding-top: 10px;
+    }
+
+    .custom-boxes p{
+        padding: 10px;
+    }
+
+}
+
+/* Section 4 Gallery */
+#gallery{
+    background-color: #2a6bab;
+    width: 100%; /* redundant*/
+}
+#gallery h2{
+    color: #fff;
+    padding-top: 10px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.box-pics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.box-pics img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+@media (min-width:768px){
+    .box-pics{
+        display: inline-block;
+    }
+     .gallery-boxes {
+        display: inline-block;
+        width: 49%;
+        text-align: center; /* centers the boxes*/
+    }
+
+
+}
+@media (min-width: 1180px){
+    .box-pics{
+        display: inline-block;
+        margin: auto; /* redundant*/
+    } /* redundant*/
+    .gallery-boxes{
+        display: inline-block;
+        width: 33%;
+        text-align: center; /* redundant*/
+    }
+}
+/* Section 5 pricing */
+#pricing h2{
+    font-family: "Roboto Flex", sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0; /* redundant*/
+    margin-bottom: 20px;/* redundant*/
+}
+
+.box-prices h3 {
+    margin: 0;
+    font-family: "Roboto Flex", sans-serif;
+}
+.box-prices p{
+    margin: 5px;
+    font-family: "Roboto Flex", sans-serif;
+  
+}
+.box-prices {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center; /* redundant*/
+}
+
+.img-price img{
+    width: 150px;
+    height: 150px;
+    padding-top: 22px;
+}
+/* adding display style to the div with the images and texts inside it for pricing section */
+.img-price {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow:  0px 1px 6px 0;      /* giving shadows to the edges of 3 div boxs which make them look different */
+    cursor: pointer;  /* make the cusror turn into a pointer when hovered over */
+}
+.img-price:hover{
+    background-color: var(--hovers);
+    color:var(--white);
+    transition: color 0.5s ,background-color 0.5s ;
+    font-weight: bold;
+}
+/* media quireis for ipdas for the pricing section */
+@media (min-width:768px){
+    .box-prices {
+        display:flex;
+        flex-direction:column;
+    }
+    .img-price{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 65%;
+        margin:auto; /* Centers the boxes in both ipad and desktop screens*/
+        margin-bottom:2rem;
+    }
+    .img-price img{
+        margin: 5px 0 5px 43px;
+    }
+    /* all the .text-display code is redundant */
+  .box-prices .text-display{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  } 
+  /* The second box contents are displayed from right to left opposite of the first and third box; */
+  .box-prices .reverse-info{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+/* Media quiries for computer (desktop) screens */
+@media (min-width:1180px){
+
+ .box-prices{
+        display:flex;
+        flex-direction:row;
+        width: 100%;
+        margin: auto;
+    }
+    .box-prices .img-price {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    /* Centers the images in the image price box */
+    .box-prices .img-price img {
+        width: 100%;
+        margin: auto; 
+    }
+}
+
+/* contact section */
+#contact {
+    background-color:  #2a6bab;
+    width: 100%;
+    display: flex;
+    flex-direction: column;  /* redundant from the second line */
+}
+.form-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+/* Giving flex display to the form to have its elements stacked as columns */
+.form-box form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+}
+.form-box form h2{
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.contact-info .personal-info{
+    margin: 10px;
+    height: 25px;
+    border-radius: 5px;
+    padding: 10px;
+}
+ #button{
+    height: 45px;
+    padding: 10px;
+    padding: 10px;
+    color: var(--hovers);
+    font-size: 1rem;
+    cursor: pointer;
+}
+#button:hover{
+    background-color: #070101b1;
+    color: var(--white);
+    transition: color 0.5s , background-color 0.5s;
+}
+/* styling the footer to be centered and displayed in a row */
+footer{
+    background-color: var(--lightBlue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+/* Fix the dark/light mode buttons on bottom of the page*/
+#light-dark-modes {
+    position: fixed;
+    z-index: 1000; /*the buttons will go under the video if not z indexed*/
+    top: 92%;
+}
+
+ .mode-label:hover{
+    cursor: pointer;
+} /* redundant*/
+/* both buttons text and background color. positioning the contents*/
+/* radio-button2 is redundant here */
+input#radio-button2 ~ main .mode-label{
+    background-color: #007171;
+    color: var(--white);
+    padding: 20px; /* Making the buttons bigger */
+    border-radius: 5px;/* Rounding the edges */
+    cursor: pointer;
+} 
+/* style the selected label to indicate which one is active */
+input#radio-button:checked ~ main label[for="radio-button"]{
+    font-weight: bold;
+    background-color: var(--lightBlue);    
+    color: #fff;
+}
+input#radio-button2:checked ~ main label[for="radio-button2"]{
+    font-weight: bold; /* Text inside gets bigger when the dark mode is selected*/
+    background-color: var(--lightBlue);    
+    color: #fff;
+}
+/* set up the back ground color for light mode*/
+input#radio-button:checked ~ main{
+    background-color: white;
+    color: black;
+}
+
+/* nav back ground color changes to dark when dark mode selected */
+input#radio-button2:checked ~ main nav  {
+    background-color: black;
+}
+/* ul background color in dark mode */
+/* Second review main > nav > ul : wrong selector. 
+Correct selector is: main nav ul */
+input#radio-button2:checked ~ main > nav > ul  {
+    background-color: black;
+}
+/* main background color */
+input#radio-button2:checked ~ body , main {
+    background-color: black;
+    color: white;
+}
+/* black mode background theme */
+/* another selector mistake
+wrong : main > #gallery 
+correct : main #gallery
+*/
+input#radio-button2:checked ~ main > #gallery {
+    background-color: black;
+    color: var(--white);    
+}
+/* dark mode background theme 
+wrong : main > #contact 
+correct : main #contact
+*/
+input#radio-button2:checked ~ main > #contact {
+    background-color: black;
+    color: var(--white);
+}
+/* dark mode background theme 
+wrong : main > footer 
+correct : main footer
+*/
+input#radio-button2:checked ~ main > footer {
+    background-color: black;
+    color: var(--white);
+}
+/* dark mode background theme */
+input#radio-button2:checked ~ main #button:hover {
+    background-color: var(--black-theme-hover);
+    color: var(--white);
+}
+input#radio-button2:checked ~ main #about {
+    color: var(--white);
+}
+
+/* ul items background color change when hovered */
+input#radio-button2:checked ~ main nav ul a:hover {
+    background-color: var(--black-theme-hover);
+    color:var(--white);
+}
+/* customization section text color 
+/* dark mode background theme 
+wrong : main > customiztion 
+correct : main customiztion
+*/
+input#radio-button2:checked ~ main > #customization {
+    color: var(--white);
+}
+/* hover style on customization boxes */
+input#radio-button2:checked ~ main .custom-boxes:hover {
+    background-color: var(--black-theme-hover);
+    color: #9c024c;
+    font-weight: bold;
+}
+input#radio-button2:checked ~ main .img-price{
+    background-color: black;
+    color: var(--white);
+}
+/* dark mode text color  
+wrong : main > #pricing > h2 
+correct : main #pricing h2
+*/
+input#radio-button2:checked ~ main > #pricing  > h2 {
+    color: var(--white);
+}
+/* Hover effects in dark mode on price boxes*/
+input#radio-button2:checked ~ main .img-price:hover {
+background-color: var(--black-theme-hover);
+color: #9c024c;
+font-weight: bold;
+}
+/* hiding the radio buttons */
+input[name="page-theme"]{
+    display: none;
+}
+
+

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Club</title>
+    <link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
+<link href="./font-awesome/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="font-awesome/css/all.css">
+</head>
+<body>
+    <!-- Creating the radio buttons for dark and light modes-->
+<input name="page-theme" type="radio" id="radio-button" class="light-radio-button" checked="checked">
+<input name="page-theme" type="radio" id="radio-button2" class="dark-radion-button">
+
+    <!-- creating the nav bar and the labels for radio buttons(Dark and Light modes) -->
+     <main>
+        <div> 
+            <div id="light-dark-modes">
+                <label class="mode-label" for="radio-button">Light <span class="icon">☀️</span></label>
+                <label class="mode-label" for="radio-button2">Dark <span class="icon">🌙</span></label>
+            </div>
+        </div>
+        <nav>
+            <!-- header of nav bar -->
+            <div class="title">Meditation For Everyone</div>   
+             <label for="mobile-menu-humburger">&#9776;</label> <!-- adding the humburger to the nav for mobile-->
+             <input type="checkbox" id="mobile-menu-humburger"> <!-- an input checkbox to trigger the humburger-->
+              <!-- lists of sections on the page and clickable to the appropriate section-->
+             <ul> 
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#customization">Features</a> </li>
+                  <li><a href="#gallery">Gallery</a></li>
+                  <li><a href="#pricing">Pricing</a></li>
+                  <li><a href="#contact">Contact</a></li>
+             </ul>
+         </nav>
+    <br>
+     <!-- Adding a live video to the header muted and also looped so the video goes on forever-->
+        <header>
+            <video autoplay muted loop>
+                <source src="video/2381-157901992_small.mp4" type="video/mp4">
+            </video>
+        <!--adding heading and paragraph onto the video. 2 dives for each inside a parent div for display purposes -->
+        <div class="content">
+                <div id="text-content">	
+                    <h1>Level Based Meditation Courses</h1>
+                    <p>Pick The Ones According to Your Level</p>
+                </div>
+            <!-- Making a button that takes the user to the about section below the video section -->
+            <div id="buttons">
+                <a href="#about">SEE MORE ABOUT US
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+        </header>
+    <!-- About section -->
+    <section id="about">
+            <div class="about-meditation">
+                <h1>About Meditation Course Details and Missions</h1>
+                <br>
+                <p>meditation is the act of focusing the mind within the body.
+                    When you gently turn your attention inward,  you achieve physical and mental relaxation.
+                    
+                    Meditation brings concentration, tranquility, as well as pain reduction and enhanced health
+                    recovery. When you meditate, you are actually training your mind to be less easily
+                    distracted.
+                </p>
+                    <p>Meditation and contemplation are not about becoming a different person,
+                    a new individual, or even a better person rather, they are a way to become
+                    aware of your feelings and thoughts. These courses are tailored to all levels 
+                    of meditation.Our mission is to add value and help people get more 
+                    closer to themsevels.
+                </p>
+            </div>
+    </section>
+    <!-- Customization section with 6 images and headers and paragraphs providing courses info -->
+    <section id="customization"></section>
+        <h1>Customization Options</h1>
+    <div id="course-details">
+        <div class="mindfullness custom-boxes">
+            <a href="./images/bear.jpg"><img src="./images/bear.jpg" alt="Mindfullness Meditation Picture"></a>
+            <h2>Mindfulness meditation</h2>
+            <p>This course can be mixed with an opportunity to connect with other members.</p>
+        </div>
+        <div class="spiritual custom-boxes">
+            <a href="./images/tiger.jpg"><img src="./images/tiger.jpg" alt="Tiger Meditation Picture"></a>
+            <h2>Spiritual meditation</h2>
+            <p>A great opportunity to experience Vippssana retreates that are held twice a year.</p>
+        </div>
+        <div class="focused custom-boxes">
+            <a href="./images/doggy.jpg"><img src="./images/doggy.jpg" alt="Focused dog Meditation Picture"></a>
+            <h2>Focused meditation</h2>
+            <p>This course comes with variety of ebooks to enhance concentration skills.</p>
+        </div>
+        <div class="mantra custom-boxes">
+            <a href="./images/german.jpg"><img src="./images/german.jpg" alt="German Meditation Picture"></a>
+            <h2>Mantra meditation</h2>
+            <p>Add a Chakra meditation once the Mantra meditaion is completed.</p>
+        </div>
+        <div class="relaxation custom-boxes">
+            <a href="./images/coyote.png"><img src="./images/coyote.png" alt="Coyote Meditation Picture"></a>
+            <h2>Progressive relaxation</h2>
+            <p>Enjoy the variety of relaxing musics that <br> come with this course. </p>
+        </div>
+        <div class="guided custom-boxes">
+            <a href="./images/guided-med.jpg"><img src="./images/guided-med.jpg" alt="Guided Meditation Picture"></a>
+            <h2>Guided Meditation</h2>
+            <p>This course can be combined with other courses <br> and allow access to mentors.</p>
+        </div>
+    </div>
+    </section>
+    <!-- Gallery Section: a gallery of meditation cartoon pictures which are clickable to view the bigger images-->
+    <section id="gallery">
+        <h2>Good Reads</h2>
+        <div class="box-pics">
+            <div class="gallery-boxes">
+                <a href="images/james-doty.jpg"><img src="images/james-doty.jpg" alt="Books"></a>
+            </div> 
+            <div class="gallery-boxes">
+                <a href="./images/unthethered-soul.jpg"><img src="./images/unthethered-soul.jpg" alt="Books"></a>
+            </div>
+            <div class="gallery-boxes">
+                <a href="./images/reality-slap.jpg"><img src="./images/reality-slap.jpg" alt="Books"></a>
+            </div>
+            <div class="gallery-boxes">
+                <a href="./images/book4.jpg"><img src="./images/book4.jpg" alt="Books"></a>
+            </div>
+            <div class="gallery-boxes">
+                <a href="./images/beyond-poses.jpg"><img src="./images/beyond-poses.jpg" alt="Books"></a>
+            </div>
+           <div class="gallery-boxes">
+            <a href="./images/macrus-au.jpg"><img src="./images/macrus-au.jpg" alt="Books"></a>   
+           </div>
+        </div>
+    </section>
+   <!-- Pricing section : 3 types of membersips along with package prices and their features each inside nested divs for display purposes-->
+    <section id="pricing">
+        <h2>Pricing</h2>
+        <div class="box-prices">
+            <div class="img-price">
+                <a href="./images/basic.jpg"><img src="./images/basic.jpg" alt="Cat Picture"></a>
+                <div class="text-display">
+                <h3>Basic Memberships</h3>
+                    <p>$85 Annualy</p>
+                    <p>Enjoy the newest and live discussions with<br>
+                        meditations in Focused, Mindfullness.<br>
+                    </p>
+                </div>
+            </div>
+            <!-- giving this box a seperate class name for the display purposes as we want this one to be displayed reveersed -->
+            <div class="img-price reverse-info ">
+                <a href="./images/advanced.jpg" ><img src="./images/advanced.jpg" alt="Cat Picture"></a>
+                <div class="text-display">
+                    <h3>Advanced Memberships</h3>
+                    <p>$110 Anually</p>
+                    <p>This memberhsip allows access to all courses, <br>
+                        live seminars, and live meditations.</p>
+                </div>
+            </div>
+            <div class="img-price">
+                <a href="./images/premium.jpg" ><img src="./images/premium.jpg" alt="Cat Picture"></a>
+                <div class="text-display">
+                    <h3>Premium Memberships</h3>
+                    <p>$150 Annualy</p>
+                    <p>This membership is all inclusive expect for <br>
+                        Vippssana which needs mentor approval</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Contact Info Section: form to get users info in cases of inquiries -->
+<section id="contact">
+    <div class="form-box">
+        <form action="" method="post">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <input class="personal-info" id="name" type="text" placeholder="Your Name" required>
+                <input class="personal-info" type="email" placeholder="Email" required>
+                <textarea class="personal-info" name="comments" id="message" placeholder="Your Message"></textarea>
+                <button class="personal-info" id="button">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- Footer section -->
+<footer>
+    <p>© 2024 Meditation For Everyone.All rights reserved.</p>
+</footer>
+</main>
+</body>
+</html>
